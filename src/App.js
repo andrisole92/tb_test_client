@@ -18,9 +18,10 @@ class App extends Component {
     }
 
     async getPrimes(e) {
+        const serverUrl = 'http://68.183.156.108/';
         e.preventDefault();
         try {
-            let res = await axios.get('http://localhost:3000/' + this.state.upper_limit);
+            let res = await axios.get(serverUrl + this.state.upper_limit);
             let {primes} = res.data;
             console.log(primes);
             this.setState({primes: primes});
