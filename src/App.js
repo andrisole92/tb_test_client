@@ -1,6 +1,5 @@
 import axios from 'axios';
 import React, {Component} from 'react';
-import Particles from 'react-particles-js';
 import './App.css';
 import ParticleContainer from "./ParticleContainer";
 
@@ -18,7 +17,7 @@ class App extends Component {
     }
 
     async getPrimes(e) {
-        const serverUrl = 'http://68.183.156.108/';
+        const serverUrl = 'http://68.183.156.108:3000/';
         e.preventDefault();
         try {
             let res = await axios.get(serverUrl + this.state.upper_limit);
