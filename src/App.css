@@ -90,8 +90,8 @@ textarea, select, input, button {
     box-shadow: 0 7px 14px rgba(50, 50, 93, .1), 0 3px 6px rgba(0, 0, 0, .08);
 }
 
-.input{
-    box-shadow: 0 0 0 1px rgba(49,49,93,.03), 0 2px 5px 0 rgba(49,49,93,.1), 0 1px 2px 0 rgba(0,0,0,.08);
+.input {
+    box-shadow: 0 0 0 1px rgba(49, 49, 93, .03), 0 2px 5px 0 rgba(49, 49, 93, .1), 0 1px 2px 0 rgba(0, 0, 0, .08);
     background-color: #fff;
     background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zd…AwIDEuMDYuNzQ4Ljc0OCAwIDAgMS0xLjA2IDBMOC41NDEgOS42NDV6Ii8+PC9nPjwvc3ZnPg==);
     background-repeat: no-repeat;
@@ -110,7 +110,7 @@ textarea, select, input, button {
     transition: box-shadow .2s ease-in-out;
 }
 
-.inputContainer{
+.inputContainer {
     display: flex;
     flex-direction: row;
     width: 90%;
@@ -118,7 +118,7 @@ textarea, select, input, button {
     margin: auto;
 }
 
-.response_median, .response_all{
+.response_median, .response_all {
     background: white;
     width: 80%;
     margin: 12px auto;
@@ -129,4 +129,8 @@ textarea, select, input, button {
     max-height: 50vh;
     overflow: scroll;
 
+}
+
+input[type='number'], textarea {
+    font-size: 1em !important;
 }
