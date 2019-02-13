@@ -1,6 +1,8 @@
 import axios from 'axios';
 import React, {Component} from 'react';
+import Particles from 'react-particles-js';
 import './App.css';
+import ParticleContainer from "./ParticleContainer";
 
 class App extends Component {
     constructor(props) {
@@ -15,7 +17,8 @@ class App extends Component {
 
     }
 
-    async getPrimes() {
+    async getPrimes(e) {
+        e.preventDefault();
         try {
             let res = await axios.get('http://localhost:3000/' + this.state.upper_limit);
             let {primes} = res.data;
@@ -36,18 +39,22 @@ class App extends Component {
 
         return (
             <div className="App">
-                <div className="inputContainer">
-                    <input type="number" value={this.state.upper_limit} onChange={(e) => {
-                        this.setState({upper_limit: e.target.value})
-                    }}/>
-                    <button type="button" onClick={() => this.getPrimes()}>Find Primes</button>
-                </div>
-                <div className="response">
-                    <div className="response_median">
-                        {this.state.primes.length > 0 ? getMedian(this.state.primes) : null}
+                <ParticleContainer/>
+                <div className="task">
+                    <div className="inputContainer">
+                        <input className="input" type="number" value={this.state.upper_limit} onChange={(e) => {
+                            e.preventDefault();
+                            this.setState({upper_limit: e.target.value})
+                        }}/>
+                        <button className="button" type="button" onClick={(e) => this.getPrimes(e)}>Find Primes</button>
                     </div>
-                    <div className="response_all">
-                        {primes}
+                    <div className="response">
+                        <div className="response_median">
+                            <p><b>Median:</b> {this.state.primes.length > 0 ? getMedian(this.state.primes) : null}</p>
+                        </div>
+                        <div className="response_all">
+                            <p><b>Primes:</b><br/> {primes}</p>
+                        </div>
                     </div>
                 </div>
             </div>
